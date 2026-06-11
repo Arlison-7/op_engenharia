@@ -43,6 +43,15 @@ const dadosObras = {
     imagens: [
       'https://i.postimg.cc/rs3n0902/ETE-01.jpg',
     ]
+  },
+  'revit-hidro': {
+    titulo: 'Projetos Residenciais (Revit)',
+    categoria: 'infra',
+    imagemCapa: 'https://i.postimg.cc/Gmvjjygj/Projeto-residencial-3D.png',
+    imagens: [
+      'https://i.postimg.cc/63qRF2zt/Projeto-de-sobrado-pavimento-terreo.png',
+      'https://i.postimg.cc/zDWSNW8Z/Projeto-sobrado-1-pavimento.png'
+    ]
   }
 };
 
@@ -771,7 +780,7 @@ export default function App() {
 
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3">
-            {['Todas', 'Areninhas', 'ETEs'].map((filter) => {
+            {['Todas', 'Areninhas', 'ETEs', 'Projetos'].map((filter) => {
               const isActive = activeFilter === filter;
               return (
                 <button
@@ -796,6 +805,7 @@ export default function App() {
                 if (activeFilter === 'Todas') return true;
                 if (activeFilter === 'Areninhas') return obra.categoria === 'areninha';
                 if (activeFilter === 'ETEs') return obra.categoria === 'ete';
+                if (activeFilter === 'Projetos') return obra.categoria === 'infra';
                 return false;
               })
               .map((obra) => (
@@ -811,7 +821,7 @@ export default function App() {
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4 bg-signal-red text-off-white font-mono text-[9px] tracking-widest px-2.5 py-1 rounded-full uppercase font-bold">
-                      {obra.categoria === 'areninha' ? 'Areninha' : 'ETE'}
+                      {obra.categoria === 'areninha' ? 'Areninha' : (obra.categoria === 'ete' ? 'ETE' : 'Projeto')}
                     </div>
                   </div>
                   <div className="p-6 flex-1 flex flex-col justify-between">
