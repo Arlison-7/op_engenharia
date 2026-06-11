@@ -21,6 +21,37 @@ import {
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+// ==========================================
+// PORTFÓLIO: BANCO DE DADOS DAS OBRAS (LOCAL)
+// ==========================================
+// Configure aqui os links das fotos de cada obra executada.
+const dadosObras = {
+  'areninha': {
+    titulo: 'Areninha Esportiva - Bairro Alto da Colina',
+    categoria: 'areninha',
+    imagemCapa: 'https://i.postimg.cc/9XnNncxr/PRACINHA-COLINA-03.jpg',
+    imagens: [
+      'https://i.postimg.cc/BZVwVJht/PRACINHA-COLINA-04.jpg',
+      'https://i.postimg.cc/PfRFRd6C/PRACINHA-COLINA-05.jpg',
+      'https://i.postimg.cc/G35S5bMh/PRACINHA-COLINA-01.jpg'
+    ]
+  },
+  'ete': {
+    titulo: 'Estação de Tratamento de Esgoto (ETE) em execução - Abatedouro de Novo Oriente',
+    categoria: 'ete',
+    imagemCapa: 'https://i.postimg.cc/4yqL717T/ETE-02.jpg',
+    imagens: [
+      'https://i.postimg.cc/rs3n0902/ETE-01.jpg',
+    ]
+  }
+};
+
+const listaObras = Object.entries(dadosObras).map(([key, val]) => ({
+  id: key,
+  ...val
+}));
+
+
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [liveLog, setLiveLog] = useState('');
@@ -28,6 +59,8 @@ export default function App() {
   const [logCharIndex, setLogCharIndex] = useState(0);
   const [schedulerActiveDay, setSchedulerActiveDay] = useState(null);
   const [schedulerSaved, setSchedulerSaved] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('Todas');
+  const [selectedObra, setSelectedObra] = useState(null);
 
   // References for GSAP animations
   const heroRef = useRef(null);
@@ -237,12 +270,14 @@ export default function App() {
           <a href="#features" className="hover-lift hover:text-signal-red transition-colors duration-300">Soluções</a>
           <a href="#philosophy" className="hover-lift hover:text-signal-red transition-colors duration-300">Manifesto</a>
           <a href="#protocol" className="hover-lift hover:text-signal-red transition-colors duration-300">Método</a>
-          <a href="#pricing" className="hover-lift hover:text-signal-red transition-colors duration-300">Planos</a>
+          <a href="#portfolio" className="hover-lift hover:text-signal-red transition-colors duration-300">Portfólio</a>
         </nav>
 
         {/* CTA Button */}
         <a 
-          href="#pricing" 
+          href="https://wa.me/5588996389702?text=Olá! Gostaria de solicitar um orçamento de projeto/execução com a O.P. Engenharia."
+          target="_blank"
+          rel="noopener noreferrer"
           id="nav-cta-btn"
           className={`magnetic-btn text-xs font-mono uppercase tracking-wider py-2.5 px-5 rounded-full border transition-all duration-300 flex items-center gap-2
             ${isScrolled 
@@ -717,166 +752,85 @@ export default function App() {
         </div>
       </section>
 
-      {/* F. MEMBERSHIP / PRICING — engagement grids */}
+      {/* F. PORTFÓLIO - NOSSAS EXECUÇÕES */}
       <section 
-        id="pricing" 
+        id="portfolio" 
         className="relative py-24 md:py-32 px-6 md:px-12 bg-off-white border-t border-black-dark/10"
       >
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto space-y-4">
-            <span className="font-mono text-xs uppercase text-signal-red tracking-widest font-bold">// MODELOS DE ENGAJAMENTO</span>
+            <span className="font-mono text-xs uppercase text-signal-red tracking-widest font-bold">// NOSSO PORTFÓLIO DE ENGENHARIA</span>
             <h2 className="font-sans font-bold text-3xl md:text-5xl uppercase tracking-tighter">
-              Planos & Contratos
+              NOSSAS EXECUÇÕES
             </h2>
             <p className="font-sans text-sm text-black-dark/70 leading-relaxed font-light">
-              Escolha a modalidade de gestão ideal para a escala do seu projeto. Desenvolvemos contratos estruturados por fases.
+              Explore a precisão e a qualidade de engenharia nas obras executadas pela O.P. ENGENHARIA em diferentes disciplinas construtivas.
             </p>
           </div>
 
-          {/* Pricing Cards Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            
-            {/* Essential Card */}
-            <div className="bg-paper p-8 rounded-brutalist border border-black-dark/10 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300">
-              <div className="space-y-6">
-                <div>
-                  <span className="font-mono text-[10px] uppercase text-black-dark/50 tracking-wider">MODALIDADE A</span>
-                  <h3 className="font-sans font-bold text-2xl uppercase mt-1">Consultoria Técnica</h3>
-                </div>
-                
-                <p className="font-sans text-sm text-black-dark/70 leading-relaxed font-light">
-                  Ideal para análise de viabilidade construtiva preliminar, modelagem inicial BIM e auditorias técnicas pontuais de projetos em andamento.
-                </p>
-
-                <div className="border-t border-black-dark/10 pt-6">
-                  <ul className="space-y-3 font-sans text-xs">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Estudo de viabilidade de projetos</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Diagnósticos de compatibilidade BIM</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Relatório técnico de riscos de execução</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-8">
-                <a 
-                  href="https://wa.me/5588996389702?text=Olá! Gostaria de solicitar um orçamento de projeto/execução com a O.P. Engenharia."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  id="pricing-essential-cta"
-                  className="magnetic-btn w-full block text-center bg-transparent border border-black-dark text-black-dark font-mono text-xs uppercase tracking-wider py-3.5 px-6 rounded-full hover:bg-black-dark hover:text-paper transition-all duration-300"
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {['Todas', 'Areninhas', 'ETEs'].map((filter) => {
+              const isActive = activeFilter === filter;
+              return (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-6 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider border transition-all duration-300
+                    ${isActive 
+                      ? 'bg-signal-red border-signal-red text-off-white shadow-md shadow-signal-red/20 scale-105' 
+                      : 'bg-paper border-black-dark/10 text-black-dark hover:bg-signal-red hover:border-signal-red hover:text-off-white hover:scale-105'
+                    }`}
                 >
-                  <span className="btn-slide bg-black-dark" />
-                  <span className="relative z-10">Solicitar Proposta</span>
-                </a>
-              </div>
-            </div>
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
 
-            {/* Performance Card (Middle Card Pops) */}
-            <div className="bg-black-dark text-paper p-8 rounded-brutalist border-2 border-signal-red flex flex-col justify-between shadow-2xl relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-signal-red text-off-white font-mono text-[9px] tracking-widest py-1 px-4 rounded-full uppercase font-bold">
-                RECOMENDADO // MAIOR VALOR
-              </div>
-              
-              <div className="space-y-6 pt-2">
-                <div>
-                  <span className="font-mono text-[10px] uppercase text-paper/40 tracking-wider">MODALIDADE B</span>
-                  <h3 className="font-sans font-bold text-2xl uppercase mt-1 text-paper">Gestão Integral de Obras</h3>
-                </div>
-                
-                <p className="font-sans text-sm text-paper/70 leading-relaxed font-light">
-                  Gestão ponta a ponta. Cuidamos do planejamento logístico, contratação, gestão de suprimentos e execução no canteiro sob rigoroso protocolo tecnológico.
-                </p>
-
-                <div className="border-t border-paper/10 pt-6">
-                  <ul className="space-y-3 font-sans text-xs">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Coordenação integral BIM 5D integrada</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Suprimentos e controle de prazos em tempo real</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Supervisão técnica diária no canteiro</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Fidelidade executiva garantida contratualmente</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-8">
-                <a 
-                  href="https://wa.me/5588996389702?text=Olá! Gostaria de solicitar um orçamento de projeto/execução com a O.P. Engenharia."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  id="pricing-performance-cta"
-                  className="magnetic-btn w-full block text-center bg-signal-red text-off-white font-mono text-xs uppercase tracking-wider py-4 px-6 rounded-full hover:bg-paper hover:text-black-dark transition-all duration-300"
+          {/* Grid of Work Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {listaObras
+              .filter(obra => {
+                if (activeFilter === 'Todas') return true;
+                if (activeFilter === 'Areninhas') return obra.categoria === 'areninha';
+                if (activeFilter === 'ETEs') return obra.categoria === 'ete';
+                return false;
+              })
+              .map((obra) => (
+                <div 
+                  key={obra.id}
+                  onClick={() => setSelectedObra(obra)}
+                  className="group bg-paper rounded-brutalist border border-black-dark/10 overflow-hidden cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-[380px]"
                 >
-                  <span className="btn-slide bg-paper" />
-                  <span className="relative z-10">Agendar Reunião Técnica</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Enterprise Card */}
-            <div className="bg-paper p-8 rounded-brutalist border border-black-dark/10 flex flex-col justify-between hover:shadow-xl transition-shadow duration-300">
-              <div className="space-y-6">
-                <div>
-                  <span className="font-mono text-[10px] uppercase text-black-dark/50 tracking-wider">MODALIDADE C</span>
-                  <h3 className="font-sans font-bold text-2xl uppercase mt-1">Auditoria & BIM Master</h3>
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={obra.imagemCapa} 
+                      alt={obra.titulo}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4 bg-signal-red text-off-white font-mono text-[9px] tracking-widest px-2.5 py-1 rounded-full uppercase font-bold">
+                      {obra.categoria === 'areninha' ? 'Areninha' : 'ETE'}
+                    </div>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-sans font-bold text-lg uppercase tracking-tight text-black-dark group-hover:text-signal-red transition-colors">
+                        {obra.titulo}
+                      </h3>
+                      {obra.desc && (
+                        <p className="font-sans text-xs text-black-dark/70 line-clamp-2 mt-2 leading-relaxed font-light">
+                          {obra.desc}
+                        </p>
+                      )}
+                    </div>
+                    <div className="mt-4 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-signal-red font-bold">
+                      Ver Galeria <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </div>
-                
-                <p className="font-sans text-sm text-black-dark/70 leading-relaxed font-light">
-                  Desenvolvido para investidores ou construtoras parceiras. Auditoria metrológica, checagem As-Built a laser e consultoria de estruturação de processos digitais.
-                </p>
-
-                <div className="border-t border-black-dark/10 pt-6">
-                  <ul className="space-y-3 font-sans text-xs">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Laser scanning 3D e modelagem de desvios</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Auditorias independentes para fundos imobiliários</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-signal-red" />
-                      <span>Entrega integrada de Gêmeos Digitais (Digital Twins)</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="pt-8">
-                <a 
-                  href="https://wa.me/5588996389702?text=Olá! Gostaria de solicitar um orçamento de projeto/execução com a O.P. Engenharia."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  id="pricing-enterprise-cta"
-                  className="magnetic-btn w-full block text-center bg-transparent border border-black-dark text-black-dark font-mono text-xs uppercase tracking-wider py-3.5 px-6 rounded-full hover:bg-black-dark hover:text-paper transition-all duration-300"
-                >
-                  <span className="btn-slide bg-black-dark" />
-                  <span className="relative z-10">Falar com Diretor Técnico</span>
-                </a>
-              </div>
-            </div>
-
+              ))}
           </div>
         </div>
       </section>
@@ -907,7 +861,7 @@ export default function App() {
                 <li><a href="#features" className="hover:text-paper transition-colors">Soluções</a></li>
                 <li><a href="#philosophy" className="hover:text-paper transition-colors">Manifesto</a></li>
                 <li><a href="#protocol" className="hover:text-paper transition-colors">Nosso Protocolo</a></li>
-                <li><a href="#pricing" className="hover:text-paper transition-colors">Contratos</a></li>
+                <li><a href="#portfolio" className="hover:text-paper transition-colors">Portfólio</a></li>
               </ul>
             </div>
 
@@ -949,6 +903,64 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Lightbox Gallery Modal */}
+      {selectedObra && (
+        <div 
+          className="fixed inset-0 z-50 bg-black-dark/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 overflow-y-auto"
+          onClick={() => setSelectedObra(null)}
+        >
+          <div 
+            className="bg-off-white max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-brutalist border border-black-dark/15 p-6 md:p-8 relative scrollbar-none"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button "X" */}
+            <button 
+              onClick={() => setSelectedObra(null)}
+              className="absolute top-4 right-4 bg-signal-red text-off-white hover:bg-black-dark hover:text-paper rounded-full p-2 transition-all duration-300 z-10 shadow-md flex items-center justify-center w-8 h-8 font-bold"
+              aria-label="Fechar modal"
+            >
+              X
+            </button>
+
+            {/* Modal Content */}
+            <div className="space-y-6 text-left">
+              <div>
+                <span className="font-mono text-[10px] uppercase text-signal-red tracking-widest font-bold block mb-1">
+                  // {selectedObra.categoria.toUpperCase()}
+                </span>
+                <h3 className="font-sans font-bold text-2xl md:text-3xl uppercase tracking-tight text-black-dark">
+                  {selectedObra.titulo}
+                </h3>
+              </div>
+
+              {selectedObra.desc && (
+                <p className="font-sans text-xs md:text-sm text-black-dark/80 leading-relaxed font-light">
+                  {selectedObra.desc}
+                </p>
+              )}
+
+              <div className="border-t border-black-dark/15 pt-6">
+                <h4 className="font-mono text-xs uppercase tracking-widest text-black-dark font-bold mb-4">// GALERIA DE FOTOS</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {selectedObra.imagens && selectedObra.imagens.map((imgUrl, idx) => (
+                    <div key={idx} className="relative aspect-video overflow-hidden rounded-[1.5rem] border border-black-dark/10 group bg-paper">
+                      <img 
+                        src={imgUrl} 
+                        alt={`${selectedObra.titulo} - Foto ${idx + 1}`}
+                        className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.src = 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80';
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
