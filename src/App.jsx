@@ -584,7 +584,7 @@ export default function App() {
           <div ref={philosophyTextRef} className="space-y-12">
             {/* The Neutral Statement */}
             <p className="font-sans text-lg md:text-2xl text-paper/40 leading-relaxed font-light max-w-3xl">
-              {"A maioria das empresas de gerenciamento foca em: improvisos de última hora, planilhas obsoletas e contenção de danos fiscais pós-atraso.".split(' ').map((word, i) => (
+              {"Grandes obras nascem de uma engenharia transparente e próxima. Transformamos desafios complexos de gestão e projetos em soluções inteligentes, seguras e previsíveis para o seu investimento.".split(' ').map((word, i) => (
                 <span key={i} className="reveal-word inline-block mr-2">{word}</span>
               ))}
             </p>
@@ -594,13 +594,13 @@ export default function App() {
               {"Nós focamos em: ".split(' ').map((word, i) => (
                 <span key={`f-${i}`} className="reveal-word inline-block mr-3 text-paper/30">{word}</span>
               ))}
-              {"precisão cirúrgica, ".split(' ').map((word, i) => (
+              {"parceria genuína, ".split(' ').map((word, i) => (
                 <span key={`p-${i}`} className="reveal-word inline-block mr-3 text-signal-red font-serif italic normal-case tracking-normal">{word}</span>
               ))}
-              {"engenharia de dados estruturados e total ".split(' ').map((word, i) => (
+              {"TECNOLOGIA BIM E GESTÃO COM ".split(' ').map((word, i) => (
                 <span key={`e-${i}`} className="reveal-word inline-block mr-3 text-paper">{word}</span>
               ))}
-              {"fidelidade executiva.".split(' ').map((word, i) => (
+              {"compromisso real.".split(' ').map((word, i) => (
                 <span key={`x-${i}`} className="reveal-word inline-block mr-3 text-paper font-serif italic normal-case tracking-normal">{word}</span>
               ))}
             </p>
