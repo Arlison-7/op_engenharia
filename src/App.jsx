@@ -638,7 +638,7 @@ export default function App() {
                 Análise & Modelagem BIM
               </h3>
               <p className="font-sans text-sm md:text-base text-black-dark/70 leading-relaxed font-light">
-                Desenvolvemos modelos tridimensionais integrados de alta precisão. Compatibilizamos os projetos estruturais, elétricos e hidrossanitários antes de pisar no canteiro, antecipando interferências geométricas para eliminar desperdícios de materiais e retrabalhos na execução.
+                Desenvolvemos modelos 3D de alta precisão. Compatibilizamos os projetos estruturais, elétricos e hidrossanitários antes de pisar no canteiro, antecipando interferências geométricas para eliminar desperdícios de materiais e retrabalhos na execução.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="bg-off-white font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-full border border-black-dark/5">Compatibilidade Digital 100%</span>
@@ -683,7 +683,7 @@ export default function App() {
                 Execução Técnica Rigorosa
               </h3>
               <p className="font-sans text-sm md:text-base text-black-dark/70 leading-relaxed font-light">
-                O planejamento digital se materializa no canteiro de obras com precisão cirúrgica. Gerenciamos suprimentos, controlamos prazos de forma intensiva e realizamos vistorias técnicas contínuas, garantindo que o cronograma físico-financeiro seja cumprido rigorosamente conforme o planejado.
+                O planejamento se materializa no canteiro de obras com precisão. Gerenciamos suprimentos, controlamos prazos de forma intensiva e realizamos vistorias técnicas contínuas, garantindo que o cronograma físico-financeiro seja cumprido rigorosamente conforme o planejado.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="bg-off-white font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-full border border-black-dark/5">Laser Scanning 3D</span>
