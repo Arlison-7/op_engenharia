@@ -633,12 +633,12 @@ export default function App() {
           {/* Card 1 */}
           <div className="protocol-card bg-paper p-8 md:p-12 rounded-brutalist border border-black-dark/10 min-h-[70vh] flex flex-col md:flex-row gap-8 justify-between items-center sticky top-[12vh]">
             <div className="space-y-6 max-w-xl text-left">
-              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">STEP 01</span>
+              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">ETAPA 01</span>
               <h3 className="font-sans font-bold text-2xl md:text-4xl uppercase tracking-tight">
                 Análise & Modelagem BIM
               </h3>
               <p className="font-sans text-sm md:text-base text-black-dark/70 leading-relaxed font-light">
-                Utilizamos o modelamento BIM (Building Information Modeling) avançado para extrair volumetrias precisas, simular fluxos logísticos no canteiro e compatibilizar as especialidades de forma integrada antes de qualquer escavação.
+                Desenvolvemos modelos tridimensionais integrados de alta precisão. Compatibilizamos os projetos estruturais, elétricos e hidrossanitários antes de pisar no canteiro, antecipando interferências geométricas para eliminar desperdícios de materiais e retrabalhos na execução.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="bg-off-white font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-full border border-black-dark/5">Compatibilidade Digital 100%</span>
@@ -678,12 +678,12 @@ export default function App() {
           {/* Card 2 */}
           <div className="protocol-card bg-paper p-8 md:p-12 rounded-brutalist border border-black-dark/10 min-h-[70vh] flex flex-col md:flex-row gap-8 justify-between items-center sticky top-[12vh]">
             <div className="space-y-6 max-w-xl text-left">
-              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">STEP 02</span>
+              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">ETAPA 02</span>
               <h3 className="font-sans font-bold text-2xl md:text-4xl uppercase tracking-tight">
                 Execução Técnica Rigorosa
               </h3>
               <p className="font-sans text-sm md:text-base text-black-dark/70 leading-relaxed font-light">
-                Com o planejamento estruturado, gerenciamos o canteiro com controle tecnológico intensivo de concreto e aço, medições topográficas a laser digitais e auditorias fotográficas periódicas para mapeamento tridimensional de progresso.
+                O planejamento digital se materializa no canteiro de obras com precisão cirúrgica. Gerenciamos suprimentos, controlamos prazos de forma intensiva e realizamos vistorias técnicas contínuas, garantindo que o cronograma físico-financeiro seja cumprido rigorosamente conforme o planejado.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="bg-off-white font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-full border border-black-dark/5">Laser Scanning 3D</span>
@@ -711,12 +711,12 @@ export default function App() {
           {/* Card 3 */}
           <div className="protocol-card bg-paper p-8 md:p-12 rounded-brutalist border border-black-dark/10 min-h-[70vh] flex flex-col md:flex-row gap-8 justify-between items-center sticky top-[12vh]">
             <div className="space-y-6 max-w-xl text-left">
-              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">STEP 03</span>
+              <span className="font-mono text-sm text-signal-red font-bold tracking-widest block">ETAPA 03</span>
               <h3 className="font-sans font-bold text-2xl md:text-4xl uppercase tracking-tight">
                 Auditoria & Entrega As-Built
               </h3>
               <p className="font-sans text-sm md:text-base text-black-dark/70 leading-relaxed font-light">
-                Entregamos a documentação &quot;As-Built&quot; integrada ao modelo BIM original. Sua equipe recebe um ativo digital completo correspondente à obra física real, permitindo manutenções preditivas simplificadas e gestão inteligente do patrimônio.
+                Entregamos a obra pronta acompanhada do modelo 'As-Built' 100% atualizado, refletindo fielmente tudo o que foi executado. O cliente recebe um mapeamento detalhado da infraestrutura e das instalações ocultas, garantindo total segurança para futuras manutenções ou ampliações.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <span className="bg-off-white font-mono text-[10px] tracking-wider py-1.5 px-3 rounded-full border border-black-dark/5">Modelo As-Built Entregue</span>
